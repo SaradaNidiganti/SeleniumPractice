@@ -25,7 +25,12 @@ public class Alerts {
         System.out.println(confWindow.getText());
         confWindow.dismiss();
         //prompt Alert
-
+        driver.navigate().to("https://testpages.eviltester.com/styled/alerts/alert-test.html");
+        driver.findElement(By.id("promptexample")).click();
+        Alert promptAlert = driver.switchTo().alert();
+        promptAlert.sendKeys("selenium");
+        promptAlert.accept();
+        System.out.println(driver.findElement(By.id("promptreturn")).getText());
         driver.close();
         driver.quit();
     }
